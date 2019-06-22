@@ -75,7 +75,7 @@ ui库使用antd
 
 ** LICENSE
 
-   该项目使用了normalize.css的样式 ~src/asstets/style/normalize.scss~ [[github.com/necolas/normalize.css][normalize]]
-   该项目使用了bootstrap.css的样式 ~src/assets/bootstrap.css~ ~src/asets/style/utilities.scss~  [[https://github.com/twbs/bootstrap][bootstrap]]
-   
+   - 该项目使用了normalize.css的样式 ~src/asstets/style/normalize.scss~ [[github.com/necolas/normalize.css][normalize]]
+   - 该项目使用了bootstrap.css的样式 ~src/assets/bootstrap.css~ ~src/asets/style/utilities.scss~  [[https://github.com/twbs/bootstrap][bootstrap]]
+
    - [[https://github.com/Kreedzt/Typescript-React-Template/blob/master/README.org][MIT]]
