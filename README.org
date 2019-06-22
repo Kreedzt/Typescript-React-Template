@@ -8,7 +8,7 @@ ui库使用antd
 
 已知问题:
 
- - [ ] eslint和@ts的插件检测可能会出血重复问题，最明显的尤为no-unused-vars
+ - [ ] eslint和@ts的插件检测可能会出现重复问题，最明显的尤为no-unused-vars
 
  #+begin_src txt
  Line 2: 'message' is defined but never used no-unused-vars 
@@ -33,8 +33,8 @@ ui库使用antd
 
 ** 项目结构
 
- - 跟目录内
- - ~.prettier.rc~ 与 ~.eslintrc.js~ 为项目规范统一配置文件
+ - 根目录内
+   - ~.prettier.rc~ 与 ~.eslintrc.js~ 为项目规范统一配置文件
 
  - public内
    - nginxConf: nginx配置文件(生产环境nginx配置)
@@ -72,3 +72,10 @@ ui库使用antd
      1. ~src/routes/~ 新建业务模块代码
      2. 在 ~src/routes/routes.ts~ 中数组添加相关配置
      3. 在 ~src/service/~ 中新建网络请求及类型定义文件
+
+** LICENSE
+
+   该项目使用了normalize.css的样式 ~src/asstets/style/normalize.scss~ [[github.com/necolas/normalize.css][normalize]]
+   该项目使用了bootstrap.css的样式 ~src/assets/bootstrap.css~ ~src/asets/style/utilities.scss~  [[https://github.com/twbs/bootstrap][bootstrap]]
+   
+   - [[https://github.com/Kreedzt/Typescript-React-Template/blob/master/README.org][MIT]]
