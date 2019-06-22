@@ -1,0 +1,22 @@
+.login-container {
+  width: 100%;
+  height: 100%;
+
+  .login-form {
+    width: 300px;
+
+    .login-form-button {
+      width: 100%;
+      background-color: #199ed9;
+      color: #fff;
+    }
+  }
+
+  span.action-text {
+    cursor: pointer;
+
+    &:hover {
+      color: #199ed9;
+    }
+  }
+}

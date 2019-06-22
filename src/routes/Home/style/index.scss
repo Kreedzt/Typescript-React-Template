@@ -1,0 +1,54 @@
+.home-layout {
+  height: 100vh;
+  
+  .logo {
+    height: 100%;
+    //padding: 16px;
+    width: 200px;
+    background-color: rgba(255, 255, 255, .2);
+
+    > img {
+      //width: 100%;
+      height: 100%;
+    }
+  }
+
+  .trigger {
+    font-size: 18px;
+    cursor: pointer;
+    transition: all .3s;
+  }
+
+  .side-menu {
+    height: calc(100vh - 64px);
+  }
+
+  .top-header {
+    background-color: #fff;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    box-shadow: 1px 1px 5px #ccc;
+  }
+
+  > section {
+    margin-top: 64px;
+    position: fixed;
+    width: 100vw;
+
+    > main {
+      height: calc(100vh - 64px);
+      overflow-y: auto;
+      margin: 0;
+      padding: 0 16px;
+
+      > .router-view-content {
+        padding: 24px;
+        min-height: 360px;
+        background-color: #fff;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

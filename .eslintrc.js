@@ -1,21 +1,31 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
+  parserOptions: {
+    project: './tsconfig.json'
+  },
   extends: [
-    'airbnb',
+    'airbnb-base',
     'plugin:@typescript-eslint/recommended',
-    'prettier',
     'prettier/@typescript-eslint'
   ],
   plugins: ['@typescript-eslint'],
-  "settings": {
+  settings: {
     "import/resolver": {
-      "node": {
-        "paths": ["src"],
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      node: {
+        paths: ['src'],
+        extensions: [".js", ".jsx", ".ts", ".tsx", ".d.ts"]
       }
     }
   },
   rules: {
+    'react/prop-types': 0,
+    'implicit-arrow-linebreak': 0,
+    'function-paren-newline': 0,
+    'operator-linebreak': 0,
+    'object-curly-newline': 1,
+    'linebreak-style': 0, // 换行方式， 推荐开启此选项，选用LF兼容性高
+    'no-trailing-spaces': 0,
+    'react/jsx-one-expression-per-line': 0,
     'no-return-assign': 0,
     'arrow-parens': 0,
     'arrow-body-style': 0,
@@ -32,9 +42,9 @@ module.exports = {
     '@typescript-eslint/explicit-member-accessibility': 0,
     'lines-between-class-members': 0,
     'no-param-reassign': 0,
-    "react/jsx-filename-extension": [
+    'react/jsx-filename-extension': [
       1,
-      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+      { extensions: ['.js', '.jsx', '.ts', '.tsx'] }
     ],
     'import/no-unresolved': 0,
     indent: [

@@ -1,27 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { createContext } from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
+import { LocaleProvider } from 'antd';
+import zhCN from 'antd/lib/locale-provider/zh_CN';
+
+import Routes from './config/router';
 import './App.css';
+import './assets/style/scss/index.scss';
+
+export const RouterContext = createContext({});
+
+const CustomBrowserRouter = ({ children }) => (
+  <BrowserRouter>
+    <Route>
+      {routeProps => (
+        <RouterContext.Provider value={routeProps}>
+          {children}
+        </RouterContext.Provider>
+      )}
+    </Route>
+  </BrowserRouter>
+);
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit 
-          <code>src/App.tsx</code> 
-          and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <LocaleProvider locale={zhCN}>
+      <CustomBrowserRouter>
+        <Routes />
+      </CustomBrowserRouter>
+    </LocaleProvider>
   );
 };
 

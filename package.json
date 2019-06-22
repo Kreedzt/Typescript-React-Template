@@ -1,14 +1,15 @@
 {
   "name": "next-project-template",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
-    "@babel/core": "7.4.3",
+    "@babel/core": "^7.4.5",
     "@svgr/webpack": "4.1.0",
     "@types/jest": "24.0.13",
     "@types/node": "12.0.4",
     "@types/react": "16.8.19",
     "@types/react-dom": "16.8.4",
+    "@types/react-router-dom": "^4.3.4",
     "@typescript-eslint/eslint-plugin": "^1.10.2",
     "@typescript-eslint/parser": "^1.10.2",
     "@typescript-eslint/typescript-estree": "^1.10.2",
@@ -17,9 +18,9 @@
     "babel-eslint": "10.0.1",
     "babel-jest": "^24.8.0",
     "babel-loader": "8.0.5",
+    "babel-plugin-import": "^1.12.0",
     "babel-plugin-named-asset-import": "^0.3.2",
     "babel-preset-react-app": "^9.0.0",
-    "camelcase": "^5.2.0",
     "case-sensitive-paths-webpack-plugin": "2.2.0",
     "css-loader": "2.1.1",
     "dotenv": "6.2.0",
@@ -45,7 +46,10 @@
     "jest-environment-jsdom-fourteen": "0.1.0",
     "jest-resolve": "24.7.1",
     "jest-watch-typeahead": "0.3.0",
+    "less": "^3.9.0",
+    "less-loader": "^5.0.0",
     "mini-css-extract-plugin": "0.5.0",
+    "node-sass": "^4.12.0",
     "optimize-css-assets-webpack-plugin": "5.0.1",
     "pnp-webpack-plugin": "1.2.1",
     "postcss-flexbugs-fixes": "4.1.0",
@@ -57,8 +61,10 @@
     "react-app-polyfill": "^1.0.1",
     "react-dev-utils": "^9.0.1",
     "react-dom": "^16.8.6",
+    "react-router": "^5.0.1",
+    "react-router-dom": "^5.0.1",
     "resolve": "1.10.0",
-    "sass-loader": "7.1.0",
+    "sass-loader": "^7.1.0",
     "semver": "6.0.0",
     "style-loader": "0.23.1",
     "terser-webpack-plugin": "1.2.3",
@@ -74,6 +80,9 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
   },
   "browserslist": {
     "production": [
