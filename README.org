@@ -1,0 +1,74 @@
+* Typescript-React-Template
+
+基于create-react-app --typescript新建的项目（已使用eject， 所以config， public与scripts 都是CRA创建的文件夹）
+增加了为ts检测的eslint配置，增加了react-router，增加了less与sass支持
+ui库使用antd
+
+** Problems
+
+已知问题:
+
+ - [ ] eslint和@ts的插件检测可能会出血重复问题，最明显的尤为no-unused-vars
+
+ #+begin_src txt
+ Line 2: 'message' is defined but never used no-unused-vars 
+ Line 2: 'message' is defined but never used @typescript-eslint/no-unused-vars 
+ Line 5: 'post' is defined but never used @typescript-eslint/no-unused-vars
+ #+end_src
+
+- [ ] 无法间接export ts相关的特性（包括enum，interface等特性）
+#+begin_src typescript
+  interface typeA {
+    name: string;
+  }
+
+  export { typeA } // 报错
+#+end_src
+
+#+begin_src typescript
+  export interface typeA { // 检测通过
+    name: string;
+  }
+#+end_src
+
+** 项目结构
+
+ - 跟目录内
+ - ~.prettier.rc~ 与 ~.eslintrc.js~ 为项目规范统一配置文件
+
+ - public内
+   - nginxConf: nginx配置文件(生产环境nginx配置)
+
+ - src内
+   - assets: 静态资源文件
+   - components: 通用组件
+   - config: 项目路由与网络请求配置文件
+   - hooks: 通用hooks
+   - routes: 路由及组件
+     - routes.ts：主页内路由定义文件
+   - service: 网路请求与类型定义文件
+
+   - setupProxy.js: 开发环境代理配置
+
+** 使用
+   - 定义antd主题色:
+     位于 ~config/webpack.config.js~ 内473行与499行
+   
+   - 定义网络请求代理地址：
+     - 开发环境内：
+       - 修改 ~src/config/https.ts~ 第19行的基本请求地址
+       - 修改 ~src/setupProxy.js~ 第14、15、18行的地址
+     - 生产环境内（Nginx）:
+       - 修改 ~public/nginxConf/default.conf~ 内第13、16行的地址
+       > 部署示例：
+       #+begin_src shell
+         docker run --name front-end \
+                -v build:usr/share/nginx/html:ro \
+                -v build/nginxConf:/etc/nginx/conf.d:ro \
+                -p 8000:8088 -d nginx
+       #+end_src
+
+   - 添加路由
+     1. ~src/routes/~ 新建业务模块代码
+     2. 在 ~src/routes/routes.ts~ 中数组添加相关配置
+     3. 在 ~src/service/~ 中新建网络请求及类型定义文件

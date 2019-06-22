@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import Login from '../routes/Login/index';
 import Home from '../routes/Home/index';
 
+// 基本路由定义
 const Routes: React.FC = () => {
   return (
     <Switch>

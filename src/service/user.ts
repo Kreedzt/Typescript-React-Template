@@ -47,4 +47,5 @@ const updateUser = (user: User) => put<User, User>('/user', user);
 
 const deleteUser = (id: number) => del<number, User>(`/user/${id}`);
 
+// 定义获取数据方法，隐藏调用地址，仅需传递参数
 export { getUserById, getUserList, createUser, updateUser, deleteUser };

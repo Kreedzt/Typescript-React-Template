@@ -1,3 +1,4 @@
+// 登录响应参数
 export interface LoginResData {
   access_token: string;
   expires_in: number;
@@ -9,6 +10,7 @@ export interface LoginResData {
   userId: number;
 }
 
+// 登录请求参数
 export interface LoginReqData {
   username: string;
   password: string;

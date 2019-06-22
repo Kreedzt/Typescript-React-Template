@@ -13,6 +13,7 @@ const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
 
 const Home: React.FC = () => {
+  // 通过useRouter获取路由对象
   const routerProps = useRouter();
   console.log(routerProps);
 
@@ -84,6 +85,7 @@ const Home: React.FC = () => {
                 routerProps.location.pathname.replace('/', '')}
             </Breadcrumb.Item>
           </Breadcrumb>
+          {/* 路由展示页面 */}
           <div className="router-view-content">
             <Switch>{routesArray}</Switch>
           </div>
