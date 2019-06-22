@@ -1,24 +1,28 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
-  parserOptions: {
-    project: './tsconfig.json'
-  },
   extends: [
-    'airbnb-base',
+    'airbnb',
     'plugin:@typescript-eslint/recommended',
-    'prettier/@typescript-eslint'
+    'prettier/@typescript-eslint',
+    'plugin:prettier/recommended'
   ],
-  plugins: ['@typescript-eslint'],
+  plugins: ['@typescript-eslint', 'prettier'],
   settings: {
-    "import/resolver": {
+    'import/resolver': {
       node: {
         paths: ['src'],
-        extensions: [".js", ".jsx", ".ts", ".tsx", ".d.ts"]
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.d.ts']
       }
     }
   },
   rules: {
-    'react/prop-types': 0,
+    'prettier/prettier': [
+      'error',
+      {
+        'singleQuote': true
+      }
+    ],
+    'react/prop-types': [0],
     'implicit-arrow-linebreak': 0,
     'function-paren-newline': 0,
     'operator-linebreak': 0,
