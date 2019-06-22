@@ -1,10 +1,5 @@
 import React from 'react';
-import { 
-  Form, 
-  Icon, 
-  Input, 
-  Button 
-} from 'antd';
+import { Form, Icon, Input, Button } from 'antd';
 import { FormComponentProps } from 'antd/lib/form';
 import { LoginReqData } from '../../service/login';
 
@@ -31,10 +26,11 @@ const LoginForm: React.FC<LoginFormProps> = (props: LoginFormProps) => {
     },
     wrapperCol: { span: 18 }
   };
+  const { getFieldDecorator } = form;
   return (
     <Form onSubmit={submitForm} className="login-form" {...formItemLayout}>
       <Form.Item label="用户名">
-        {form.getFieldDecorator('username', {
+        {getFieldDecorator('username', {
           rules: [{ required: true, message: '请输入用户名' }]
         })(
           <Input
@@ -44,7 +40,7 @@ const LoginForm: React.FC<LoginFormProps> = (props: LoginFormProps) => {
         )}
       </Form.Item>
       <Form.Item label="密码">
-        {form.getFieldDecorator('password', {
+        {getFieldDecorator('password', {
           rules: [{ required: true, message: '请输入密码' }]
         })(
           <Input

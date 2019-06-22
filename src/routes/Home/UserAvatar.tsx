@@ -12,11 +12,15 @@ const ControlMenu: React.FC = () => (
   <Menu>
     <Item key="user-dropdown-0">
       <Icon type="user" />
-      <Link to="/profile" className="d-inline-block">个人信息</Link>
+      <Link to="/profile" className="d-inline-block">
+        个人信息
+      </Link>
     </Item>
     <Item key="user-dropdown-1">
       <Icon type="logout" />
-      <Link to="/login" className="d-inline-block">登出</Link>
+      <Link to="/login" className="d-inline-block">
+        登出
+      </Link>
     </Item>
   </Menu>
 );

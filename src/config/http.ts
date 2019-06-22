@@ -1,4 +1,4 @@
-// 封装Axios， 返回易用的函数
+// 封装Axios，返回易用的函数
 import axios, { AxiosRequestConfig } from 'axios';
 import { message } from 'antd';
 
@@ -8,7 +8,7 @@ message.config({
 });
 
 // 后端基本返回数据类型，传泛型方便调用者传递类型代码提示
-interface ResponseData<T = {}> {
+export interface ResponseData<T = {}> {
   msg: string;
   code: number;
   data: T;
@@ -131,4 +131,4 @@ const del = <R = any, T = {}>(
   });
 };
 
-export { ResponseData, Http, get, post, put, del };
+export { Http, get, post, put, del };

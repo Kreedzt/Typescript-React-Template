@@ -22,7 +22,7 @@ const Login: React.FC = (props: any) => {
     setTimeout(() => {
       setLoading(false);
       localStorage.setItem('login-info', 'test-token');
-      props.history.replace('/');      
+      props.history.replace('/');
     }, 1000);
 
     // 登录

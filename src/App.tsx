@@ -5,8 +5,10 @@ import zhCN from 'antd/lib/locale-provider/zh_CN';
 
 import Routes from './config/router';
 import './App.css';
+import './assets/style/bootstrap.css';
 import './assets/style/scss/index.scss';
 
+// 创建路由提供者，方便子组件拿到路由对象
 export const RouterContext = createContext({});
 
 const CustomBrowserRouter = ({ children }) => (
@@ -22,6 +24,7 @@ const CustomBrowserRouter = ({ children }) => (
 );
 
 const App: React.FC = () => {
+  // 设置antd默认语言
   return (
     <LocaleProvider locale={zhCN}>
       <CustomBrowserRouter>

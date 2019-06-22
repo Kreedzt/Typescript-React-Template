@@ -6,7 +6,7 @@ import UserAvatar from './UserAvatar';
 
 import './style/index.scss';
 
-import { routesArr } from '../routes';
+import { routesArr, routeEntity } from '../routes';
 import useRouter from '../../hooks/useRouter';
 
 const { SubMenu } = Menu;
@@ -18,7 +18,8 @@ const Home: React.FC = () => {
 
   const routesArray = [];
 
-  routesArr.forEach((routeItem) => {
+  // 遍历渲染侧边菜单
+  routesArr.forEach((routeItem: routeEntity) => {
     const { path, component } = routeItem;
     // @ts-ignore
     routesArray.push(<Route key={path} component={component} path={path} />);
@@ -28,7 +29,7 @@ const Home: React.FC = () => {
 
   return (
     <Layout className="home-layout">
-      <Header className="top-header d-flex justify-content-between w-100">
+      <Header className="top-header d-flex justify-content-between">
         <div className="d-inline-flex align-items-center">
           <div className="logo d-flex justify-content-center">
             <img src="" alt="" />
@@ -44,8 +45,8 @@ const Home: React.FC = () => {
           style={{ background: '#fff' }}
         >
           <Menu theme="dark" mode="inline" className="side-menu">
-            {routesArr.map((route) =>
-              (route.children && route.children.length !== 0 ? (
+            {routesArr.map((route: routeEntity) =>
+              route.children && route.children.length !== 0 ? (
                 <SubMenu
                   key={route.id}
                   title={
@@ -55,7 +56,7 @@ const Home: React.FC = () => {
                     </span>
                   }
                 >
-                  {route.children.map((subRoute) => (
+                  {route.children.map((subRoute: routeEntity) => (
                     <Menu.Item key={subRoute.id}>
                       <NavLink to={subRoute.path}>
                         <Icon type={subRoute.icon} />
@@ -71,7 +72,7 @@ const Home: React.FC = () => {
                     {route.name}
                   </NavLink>
                 </Menu.Item>
-              ))
+              )
             )}
           </Menu>
         </Sider>
