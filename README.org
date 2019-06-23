@@ -4,7 +4,7 @@
 增加了为ts检测的eslint配置，增加了react-router，增加了less与sass支持
 ui库使用antd
 
-** Problems
+** 问题
 
 已知问题:
 
@@ -72,6 +72,25 @@ ui库使用antd
      1. ~src/routes/~ 新建业务模块代码
      2. 在 ~src/routes/routes.ts~ 中数组添加相关配置
      3. 在 ~src/service/~ 中新建网络请求及类型定义文件
+
+   - 针对使用VSCode的开发者
+     VSCode的ESlint插件默认不会针对ts文件开启，需要在 ~.vscode/settings.json~ 文件中如下配置（没有文件夹则新建）
+     #+begin_src json
+       {
+         "eslint.validate": [
+           "javascript",
+           "javascriptreact",
+           {
+             "language": "typescript",
+             "autoFix": true // 是否自动修复
+           },
+           {
+             "language": "typescriptreact",
+             "autoFix": true
+           }
+         ]
+       }
+     #+end_src
 
 ** LICENSE
 
